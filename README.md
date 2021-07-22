@@ -9,7 +9,7 @@
 
 ## <a name="Description"></a>1. Description
 
-The API is a simple usage API that implements UDP and TCPs protocol. The usage is motivated by applications that just need to exchange data without a lot of restrictions . The Simple Network API is a wrapper package of [Boos::asio](https://www.boost.org/doc/libs/1_75_0/doc/html/boost_asio.html) library.
+The API is a simple usage API that implements UDP and TCPs protocol. The usage is motivated by applications that just need to exchange data without a lot of demands and/or restrictions . The Simple Network API is a wrapper package of [Boos::asio](https://www.boost.org/doc/libs/1_75_0/doc/html/boost_asio.html) library.
 
 ## <a name="Example"></a>2. Examples
 
@@ -27,3 +27,6 @@ After the installation the shared libs will be located at ```/usr/local/lib/simp
 
 ## <a name="TODO"></a>4. TODO
 - TCP server and client implementation.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
