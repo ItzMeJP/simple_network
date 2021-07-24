@@ -5,8 +5,8 @@ includedir=${prefix}/@CMAKE_INSTALL_INCLUDEDIR@
 
 Name: @SIMPLE_NETWORK@
 Description: @SIMPLE NETWORK C++ API@
-Version: @20_06_2021@
+Version: @23_06_2021@
 
 Requires:
-Libs: -L${libdir} -lsimple_serial
+Libs: -L${libdir} -lsimple_network
 Cflags: -I${includedir}

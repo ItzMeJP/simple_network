@@ -10,7 +10,7 @@
 
 int main(){
 
-    udp_interface::UDPClient client(udp_interface::IPv4,"192.168.1.70",3303);
+    simple_network::udp_interface::UDPClient client(simple_network::IPv4,"192.168.1.70",3303);
     if(!client.send("Test String")) {
         std::cout << "Output: " << client.getOutputMSG() << std::endl;
         return -1;

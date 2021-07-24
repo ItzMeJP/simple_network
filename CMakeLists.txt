@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(simple_network
-        VERSION 20.07.2021
+        VERSION 23.07.2021
         DESCRIPTION
         "Simple serial API to C++")
 
@@ -27,7 +27,10 @@ include_directories(
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME} SHARED
-        src/simple_network/udp_interface.cpp)
+        src/simple_network/network_basis.cpp
+        src/simple_network/udp_interface.cpp
+        src/simple_network/tcp_interface.cpp
+        )
 
 ## Set dependencies of the library
 target_link_libraries(${PROJECT_NAME}
@@ -39,7 +42,8 @@ target_link_libraries(${PROJECT_NAME}
 # To export the lib and install it
 set_target_properties(${PROJECT_NAME} PROPERTIES
         VERSION ${PROJECT_VERSION}
-        PUBLIC_HEADER include/simple_network/udp_interface.h
+        PUBLIC_HEADER "include/simple_network/network_basis.h/include/simple_network/udp_interface.h;include/simple_network/tcp_interface.h"
+
         )
 
 target_include_directories(${PROJECT_NAME} PRIVATE .)
@@ -80,5 +84,19 @@ add_executable(async_udp_server
         src/examples/async_udp_server.cpp)
 
 target_link_libraries(async_udp_server
+        ${PROJECT_NAME}
+        )
+
+add_executable(tcp_client
+        src/examples/tcp_client.cpp)
+
+target_link_libraries(tcp_client
+        ${PROJECT_NAME}
+        )
+
+add_executable(async_tcp_server
+        src/examples/async_tcp_server.cpp)
+
+target_link_libraries(async_tcp_server
         ${PROJECT_NAME}
         )
