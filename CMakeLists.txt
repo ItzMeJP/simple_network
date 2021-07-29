@@ -42,7 +42,7 @@ target_link_libraries(${PROJECT_NAME}
 # To export the lib and install it
 set_target_properties(${PROJECT_NAME} PROPERTIES
         VERSION ${PROJECT_VERSION}
-        PUBLIC_HEADER "include/simple_network/network_basis.h/include/simple_network/udp_interface.h;include/simple_network/tcp_interface.h"
+        PUBLIC_HEADER "include/simple_network/network_basis.h;include/simple_network/udp_interface.h;include/simple_network/tcp_interface.h"
 
         )
 
