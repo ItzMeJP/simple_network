@@ -10,7 +10,7 @@
 
 int main(){
     std::string prev_timestamp;
-    simple_network::udp_interface::UDPServer server(simple_network::IPv4,"192.168.1.70",3303);
+    simple_network::udp_interface::UDPServer server(simple_network::IPv4,"192.168.1.89",3031);
     for (;;) {
         server.spinPoll(); //non-blocking update
         if( !(server.getLastReceivedDataTimestamp() == prev_timestamp)) {

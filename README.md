@@ -25,7 +25,7 @@ The examples codes can be found [here](./src/examples). Detailed descriptions of
 mkdir build
 cd build
 cmake ..
-make install
+sudo make install
 ```
 
 After the installation the shared libs will be located at ```/usr/local/lib/simple_network```. The headers files will be located at ```/usr/local/include/simple_network```

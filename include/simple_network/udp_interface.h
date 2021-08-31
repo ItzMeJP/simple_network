@@ -33,6 +33,11 @@ namespace simple_network {
 /// </summary>
             ~UDPBasis();
 
+/// <summary>
+/// Close/free the socket.
+/// </summary>
+            void closeSocket();
+
         protected:
             std::shared_ptr<boost::asio::ip::udp::socket> socket_;
 

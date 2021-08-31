@@ -13,7 +13,13 @@ namespace simple_network {
         /// UDP base class
         UDPBasis::UDPBasis() {};
 
-        UDPBasis::~UDPBasis() {}
+        UDPBasis::~UDPBasis() {
+            socket_->close();
+        }
+
+        void UDPBasis::closeSocket(){
+            socket_->close();
+        }
 
         /// UDP client class
         UDPClient::UDPClient(int _protocol, std::string _ip_address, unsigned short _port) {
@@ -43,6 +49,7 @@ namespace simple_network {
             }
 
             output_string_ = "The data was sent to : " + ip_address_ + " | " + std::to_string(port_);
+            socket_->close();
             return true;
         }
 
