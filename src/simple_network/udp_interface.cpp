@@ -13,9 +13,7 @@ namespace simple_network {
         /// UDP base class
         UDPBasis::UDPBasis() {};
 
-        UDPBasis::~UDPBasis() {
-            socket_->close();
-        }
+        UDPBasis::~UDPBasis() {};
 
         void UDPBasis::closeSocket(){
             socket_->close();
@@ -32,6 +30,7 @@ namespace simple_network {
         bool UDPClient::send(std::string _data) {
 
             socket_ = std::make_shared<boost::asio::ip::udp::socket>(io_context_);
+            //socket_->set_option(boost::asio::socket_base::reuse_address(true));
 
             try {
                 if (protocol_ == simple_network::IPv6)
@@ -49,7 +48,7 @@ namespace simple_network {
             }
 
             output_string_ = "The data was sent to : " + ip_address_ + " | " + std::to_string(port_);
-            socket_->close();
+            //socket_->close();
             return true;
         }
 
@@ -63,6 +62,9 @@ namespace simple_network {
                                                                      boost::asio::ip::udp::endpoint{
                                                                              boost::asio::ip::make_address(ip_address_),
                                                                              port_});
+
+           //socket_->set_option(boost::asio::socket_base::reuse_address(true));
+
             startReceive();
         }
 
